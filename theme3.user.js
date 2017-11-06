@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name         Theme3 userscript
 // @match        https://llk.github.io/scratch-gui*
+// @updateURL    https://github.com/NitroCipher/theme3/raw/master/theme3.user.js
+// @version      0.1
 // @author       NitroCipher
 // @grant        none
 // ==/UserScript==
@@ -16,26 +18,26 @@
         display none;
     }
     .gui_target-wrapper_36Gbz{
-        right: 875px;
+        right: 870px;
         position: relative;
         z-index: 100;
     }
     .stage_stage-wrapper_eRRuk{
-        right: 875px;
+        right: 870px;
         position: relative;
         z-index: 100;
     }
     .gui_stage-menu-wrapper_W5Ler{
-        right: 875px;
+        right: 870px;
         position: relative;
         z-index: 100;
     }
     .stage-selector_stage-selector_3oWOr{
-        right: 10px;
+        right: 12px;
         position: relative;
     }
     .sprite-selector_sprite-selector_2KgCX {
-        right: 8px;
+        right: 5px;
         position: relative;
     }
     g[data-category="motion" i] > path.blocklyBlockBackground {
