@@ -2,7 +2,7 @@
 // @name         Theme3 Userscript
 // @match        https://llk.github.io/scratch-gui*
 // @updateURL    https://github.com/NitroCipher/theme3/raw/master/theme3.user.js
-// @version      1.1
+// @version      1.3
 // @author       NitroCipher
 // @grant        none
 // ==/UserScript==
@@ -35,6 +35,9 @@
     function styleColor(item, index){
         if (colors[index] !== "null"){
             styleAppend = styleAppend + `g[data-category="`+item+`" i] > path.blocklyBlockBackground {fill: `+colors[index]+`;}`;
+        }
+        if (index == 1){ //I have no idea why index 1 is broken
+            styleAppend = styleAppend + `g[data-category="`+item+`" i] > path.blocklyBlockBackground {fill: `+colors[1]+`;}`;
         }
         if (index == 4){ //I have no idea why index 4 is broken
             styleAppend = styleAppend + `g[data-category="`+item+`" i] > path.blocklyBlockBackground {fill: `+colors[4]+`;}`;
