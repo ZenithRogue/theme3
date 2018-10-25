@@ -2,7 +2,7 @@
 // @name         Theme3 Userscript
 // @match        https://llk.github.io/scratch-gui*
 // @updateURL    https://github.com/NitroCipher/theme3/raw/master/theme3.user.js
-// @version      1.3
+// @version      1.4
 // @author       NitroCipher
 // @grant        none
 // ==/UserScript==
@@ -22,6 +22,7 @@
     }
     .blocklyDropDownDiv,
     div.goog-menuitem,
+    g[data-argument-type~="variable"] > .blocklyBlockBackground,
     g[data-argument-type~="dropdown"] > .blocklyBlockBackground,
     path[data-argument-type] {
         fill: #000000;
