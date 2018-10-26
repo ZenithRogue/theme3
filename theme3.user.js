@@ -2,7 +2,7 @@
 // @name         Theme3 Userscript
 // @match        https://llk.github.io/scratch-gui*
 // @updateURL    https://github.com/NitroCipher/theme3/raw/master/theme3.user.js
-// @version      1.4
+// @version      1.5
 // @author       NitroCipher
 // @grant        none
 // ==/UserScript==
@@ -10,9 +10,10 @@
     'use strict';
     var style = document.createElement('style');
     var styleAppend;
-    var categories = ["null", "motion", "looks", "sounds", "events", "control", "sensing", "operators", "data", "list", "pen", "more"];
-    var colors = ["null", "null", "null", "null", "#DE9E2E", "#FFBF00", "null", "null", "null", "null", "#0fBD8C", "null"];
-    //var colors = ["null", "#4a6cd4", "#8a55d7", "#bb42c3", "#c88330", "#e1a91a", "#2ca5e2", "#5cb712", "#ee7d16", "#cc5b22", "#0e9a6c", "#632d99"];
+    var categories = ["null", "motion", "looks", "sounds", "events", "control", "sensing", "operators", "data", "data-lists", "pen", "more"];
+    //var colors = ["null", "null", "null", "null", "#DE9E2E", "#FFBF00", "null", "null", "null", "null", "#0fBD8C", "null"];
+    //var colors = ["null", "#777DA7", "#94C9A9", "#C6ECAE", "#885053", "#FE5F55", "#87684F", "#FFB454", "#8875A5", "#95C9C4", "#AFEDB6", "#632d99"];
+    var colors = ["null", "#4a6cd4", "#8a55d7", "#bb42c3", "#c88330", "#e1a91a", "#2ca5e2", "#5cb712", "#ee7d16", "#cc5b22", "#0e9a6c", "#632d99"];
     categories.forEach(styleColor);
     style.innerHTML = `
     line,
