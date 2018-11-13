@@ -1,8 +1,9 @@
 // ==UserScript==
 // @name         Theme3 Userscript
 // @match        https://llk.github.io/scratch-gui*
+// @match        https://*.scratch.mit.edu*
 // @updateURL    https://github.com/NitroCipher/theme3/raw/master/theme3.user.js
-// @version      1.5
+// @version      1.5b
 // @author       NitroCipher
 // @grant        none
 // ==/UserScript==
