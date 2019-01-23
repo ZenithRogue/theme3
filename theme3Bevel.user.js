@@ -5,7 +5,7 @@
 // @match        https://scratch.mit.edu/projects/*
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js
 // @updateURL    https://github.com/NitroCipher/theme3/raw/master/theme3.user.js
-// @version      1.7a
+// @version      1.7b
 // @author       NitroCipher
 // @grant        none
 // ==/UserScript==
@@ -21,20 +21,11 @@
     //var colors = ["null", "#F7AA6A", "#E69672", "#F4D7AA", "#F0E7CB", "#D0E2DA", "#AFDBE3", "#CFCB72", "#E8AA55", "#CBA37C", "#BCAEC4", "#DEAFCA"];
     categories.forEach(styleColor);
     style.innerHTML = `
-    g[data-shapes~="reporter"] > path.blocklyBlockBackground,
-    g[data-shapes~="boolean"] > path.blocklyBlockBackground,
-    g[data-shapes~="hat"] > path.blocklyBlockBackground,
-    g[data-shapes~="c-block"] > path.blocklyBlockBackground,
-    g[data-shapes~="stack"] > path.blocklyBlockBackground {
-        stroke: #000000;
-        stroke-opacity: 0;
-        filter: url(#bevelFilter) !important;
-    }
     line,
     g[data-shapes] > path.blocklyBlockBackground {
         stroke: #000000;
-        stroke-opacity: 0;
-        filter: url(#inputBevelFilter);
+        stroke-opacity: 0.2;
+        filter: url(#bevelFilter);
     }
     .blocklyDropDownDiv,
     div.goog-menuitem,
@@ -45,22 +36,16 @@
         fill-opacity: 0.1;
         stroke: #000000;
         stroke-opacity: 0.2;
+        filter: url(#inputBevelFilter) !important;
+    }
+    g[data-argument-type~="text"] > path.blocklyBlockBackground {
+        filter: url(#inputBevelFilter) !important;
     }
     g[data-category] > path.blocklyBlockBackground:hover {
         fill: #716771;
     }` + styleAppend;
 
-    fetch('https://mrjacobbloom.github.io/scratch-themes-resources/2/filters.svg').then(function(response) {
-        return response.text();
-    }).then(function(response) {
-        var doc = new DOMParser().parseFromString(response, 'image/svg+xml');
-        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.appendChild(document.importNode(doc.documentElement.firstElementChild, true));
-        document.body.appendChild(svg);
-        document.body.appendChild(style);
-    });
-
-
+    document.body.appendChild(style);
 
     var waitForEl = function(selector, callback) {
         if (jQuery(selector).length) {
@@ -76,6 +61,14 @@
         document.querySelector("[class^=target-pane_target-pane]").style.flexDirection = "row-reverse";
         document.querySelector("[class^=gui_flex-wrapper]").style.flexDirection = "row-reverse";
         console.log("Swapped editor and viewer");
+        fetch('https://mrjacobbloom.github.io/scratch-themes-resources/2/filters.svg').then(function(response) {
+            return response.text();
+        }).then(function(response) {
+            var doc = new DOMParser().parseFromString(response, 'image/svg+xml');
+            var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.appendChild(document.importNode(doc.documentElement.firstElementChild, true));
+            document.body.appendChild(svg);
+        });
     });
 
     function styleColor(item, index){
