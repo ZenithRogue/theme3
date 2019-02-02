@@ -5,7 +5,7 @@
 // @match        https://scratch.mit.edu/projects/*
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js
 // @updateURL    https://github.com/NitroCipher/theme3/raw/master/theme3.user.js
-// @version      1.7b
+// @version      1.7c
 // @author       NitroCipher
 // @grant        none
 // ==/UserScript==
@@ -67,6 +67,7 @@
             var doc = new DOMParser().parseFromString(response, 'image/svg+xml');
             var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
             svg.appendChild(document.importNode(doc.documentElement.firstElementChild, true));
+            svg.style = "position: absolute; top: 0px;";
             document.body.appendChild(svg);
         });
     });
